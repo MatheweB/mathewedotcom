@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I'm an Oberlin Grad with High Honors in Computer Science and a Minor in Mathematics. I have 5 years of experience as a Software Engineer at Google, and have published research in the field of general AI and Game Theory. I consider myself a scientist and artist, and have made plenty of digital art that will be up on my website [madebymath.art](https://www.madebymath.art). 
+I'm a computer scientist and artist with a passion for exploring the intersection of technology and art. I graduated with High Honors from Oberlin College with a degree in Computer Science and a minor in Mathematics, and I’ve spent the last five years as a Software Engineer at Google. I also create digital images using techniques like linear optimization and constraints, and often share the underlying methodology alongside my pieces – you can see my work at [madebymath.art](https://www.madebymath.art).
 
-I also have a background in nonprofit work, and significant knowledge of the medical field as a former pre-med student and Brandeis Global Youth Summit attendee. I have also interned at the Georgetown University Hospital in Washington D.C. as a lab assistant in the Human Leukocyte Antigen (HLA) Lab, and at Optoro in D.C. as a Software Engineer working on their reverse logistics systems.
+My background also includes a deep interest in the medical field, sparked by my time as a pre-med student at Oberlin and involvement in the Brandeis Global Youth Summit.  I gained hands-on medical experience as a lab assistant at Georgetown University Hospital’s HLA Lab (Organ Donation Compatibility). I also have early-stage startup experience as a software engineering intern at Optoro, working on their reverse logistics systems.
 
 My research
 ======
