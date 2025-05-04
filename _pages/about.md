@@ -7,18 +7,19 @@ redirect_from:
   - /about.html
 ---
 
-I'm an Oberlin Grad, and keep up to date on Computer Science and Mathematics. I consider myself a Scientist and and Artist, and have made plenty of digital art that will eventually be up on my website [madebymath.art](https://www.madebymath.art).
+I'm an Oberlin Grad with High Honors in Computer Science and a Minor in Mathematics. I have 5 years of experience as a Software Engineer at Google, and have published research in the field of general AI and Game Theory. I consider myself a scientist and artist, and have made plenty of digital art that will be up on my website [madebymath.art](https://www.madebymath.art). 
+
+I also have a background in nonprofit work, and significant knowledge of the medical field as a former pre-med student and Brandeis Global Youth Summit attendee. I have also interned at the Georgetown University Hospital in Washington D.C. as a lab assistant in the Human Leukocyte Antigen (HLA) Lab, and at Optoro in D.C. as a Software Engineer working on their reverse logistics systems.
 
 My research
 ======
-My main research interest is in interpretable AI. As someone that likes the answer to things, black-boxes drive me crazy. I have published a thesis trying to tackle a subset of General AI that uses a "white-box" approach. That paper is called **[General Game Playing as a Bandit-Arms Problem: A Multiagent Monte-Carlo Solution Exploiting Nash Equilibria](https://digitalcommons.oberlin.edu/honors/116/)**. It combines methods from Game Theory and Machine Learning to solve non-deterministic games (*like chess*) using a simulated multi-agent system.
+My main research interest is in interpretable AI. As someone that likes provable answers to problems, black-boxes drive me crazy. I have published a thesis trying to tackle a subset of General AI that uses a "white-box" approach. That paper is called **[General Game Playing as a Bandit-Arms Problem: A Multiagent Monte-Carlo Solution Exploiting Nash Equilibria](https://digitalcommons.oberlin.edu/honors/116/)**. It combines methods from Game Theory and Machine Learning to solve non-deterministic games (*like chess*) using a simulated multi-agent system that I have [implemented on GitHub](https://github.com/MatheweB/GameAgentsHonors/tree/master).
 
 I am also passionate about Math Art, and have drawn a lot of my inspiration from [Bob Bosch](https://dominoartwork.com). Many of my artworks have research papers behind them describing the methodology and approach to creating the final images. That art will be posted on [madebymath.art](https://www.madebymath.art).
 
 My career
 ======
 ### Optoro:
-
 As an intern at Optoro, and worked on the full stack from front-end landing pages for major retail websites, to iOS applications, to automated cross-service integration testing.
 
 ### Google:
