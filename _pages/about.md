@@ -23,7 +23,7 @@ My career
 As an intern at Optoro, and worked on the full stack from front-end landing pages for major retail websites, to iOS applications, to automated cross-service integration testing.
 
 ### Google:
-I started as an **Engineering Resident** at Google in 2019 (the [residency](https://web.archive.org/web/20201112003500/https://www.google.com/about/careers/students/engres.html) was sadly 86-ed).
+I started as an **[Engineering Resident](https://web.archive.org/web/20201112003500/https://www.google.com/about/careers/students/engres.html)** at Google in 2019.
 
 On the **[Android Build](https://developer.android.com/build/gradle-build-overview) Team**, I helped optimize Android smart-sync for every Android dev. I also worked on an ML build-optimization project.
 
