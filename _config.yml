@@ -185,7 +185,7 @@ exclude:
   - README
   - tmp
   - vendor
-  # Pages to disable below (re-enable here if needed):
+  # -------- Pages to disable below (re-enable here if needed) --------
   - _pages/archive-layout-with-content.md
   - _pages/category-archive.html
   - _pages/collection-archive.html
@@ -207,7 +207,8 @@ exclude:
   - _talks/*
   - _teaching/*
   - markdown_generator/*
-  
+  - talkmap/*
+  - files/*   # (no files uploaded on website... for now)
 keep_files:
   - .git
   - .svn
