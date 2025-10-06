@@ -201,6 +201,13 @@ exclude:
   - _pages/teaching.html
   - _pages/terms.md
   - _pages/year-archive.html
+  - _posts/*
+  - _portfolio/*
+  - _publications/*
+  - _talks/*
+  - _teaching/*
+  - markdown_generator/*
+  
 keep_files:
   - .git
   - .svn
