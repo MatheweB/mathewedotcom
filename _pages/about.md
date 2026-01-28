@@ -13,7 +13,7 @@ My background also includes a deep interest in the medical field, sparked by my 
 
 My research
 ======
-My main research interest is in interpretable AI. As someone that likes provable answers to problems, black-boxes drive me crazy. I have published a thesis trying to tackle a subset of General AI that uses a "white-box" approach. That paper is called **[General Game Playing as a Bandit-Arms Problem: A Multiagent Monte-Carlo Solution Exploiting Nash Equilibria](https://digitalcommons.oberlin.edu/honors/116/)**. It combines methods from Game Theory and Machine Learning to solve non-deterministic games (*like chess*) using a simulated multi-agent system that I have [implemented on GitHub](https://github.com/MatheweB/GameAgentsHonors/tree/master).
+My main research interest is in interpretable AI. As someone that likes provable answers to problems, black-boxes drive me crazy. I have published a thesis trying to tackle a subset of General AI that uses a "white-box" approach. That paper is called **[General Game Playing as a Bandit-Arms Problem: A Multiagent Monte-Carlo Solution Exploiting Nash Equilibria](https://digitalcommons.oberlin.edu/honors/116/)**. It combines methods from Game Theory and Machine Learning to solve non-deterministic games (*like chess*) using a simulated multi-agent system that I have **[implemented on GitHub](https://github.com/MatheweB/WiseExplorer)**.
 
 I am also passionate about Math Art, and have drawn a lot of my inspiration from [Bob Bosch](https://dominoartwork.com). Many of my artworks have research papers behind them describing the methodology and approach to creating the final images. That art will be posted on [madebymath.art](https://www.madebymath.art).
 
