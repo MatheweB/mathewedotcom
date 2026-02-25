@@ -245,16 +245,35 @@ ul { list-style: none; padding: 0; }
 
 [data-theme="dark"] .sidebar__social-link[data-social="github"]:hover { color: #f0f0f0; }
 
+.sidebar__close {
+  display: none;
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0;
+}
+.sidebar__close:hover { color: var(--fg); }
+
 .sidebar__toggle {
   display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: var(--space-3);
+  top: var(--space-2);
   left: var(--space-3);
   z-index: 200;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   background: var(--bg);
   color: var(--fg);
   border: 1px solid var(--border);
@@ -290,6 +309,28 @@ ul { list-style: none; padding: 0; }
   align-items: center;
   justify-content: space-between;
   height: 48px;
+}
+
+.topnav__brand {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.topnav__photo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.topnav__name {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--fg);
+  white-space: nowrap;
 }
 
 .topnav__links {
@@ -678,16 +719,23 @@ ul { list-style: none; padding: 0; }
     border-right: 1px solid var(--border);
   }
   .sidebar--open { transform: translateX(0); }
+  .sidebar--open ~ .sidebar__toggle { opacity: 0; pointer-events: none; }
   .sidebar--open ~ .sidebar-backdrop { display: block; }
 
-  .sidebar__toggle { display: flex; }
+  .sidebar__close { display: flex; }
+  .sidebar__toggle { display: flex; transition: opacity 0.25s ease; }
 
   .site-layout { display: block; }
   .site-main { margin-left: 0; }
 
+  .topnav__brand { display: flex; }
+
   .topnav__inner {
-    padding-left: calc(var(--space-4) + 48px);
+    padding-left: calc(var(--space-3) + 44px);
   }
+
+  .topnav__links { gap: var(--space-4); }
+  .topnav__link { font-size: var(--text-xs); }
 
   .page-container { padding: var(--space-6) var(--space-4); }
 

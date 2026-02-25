@@ -155,6 +155,12 @@ const pageDescription = description || site.meta.description;
     const sidebarToggle = document.getElementById('sidebar-toggle');
     if (sidebarToggle) initSidebarToggle(sidebarToggle);
 
+    const sidebarClose = document.getElementById('sidebar-close');
+    if (sidebarClose && !sidebarClose.hasAttribute('data-initialized')) {
+      sidebarClose.setAttribute('data-initialized', '');
+      sidebarClose.addEventListener('click', () => closeSidebar());
+    }
+
     const photoFlip = document.getElementById('photo-flip');
     if (photoFlip) initPhotoFlip(photoFlip);
 
