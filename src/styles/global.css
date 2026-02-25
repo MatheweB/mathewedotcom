@@ -289,13 +289,13 @@ ul { list-style: none; padding: 0; }
   background: var(--fg);
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition);
 }
 .topnav__link:hover { color: var(--fg); }
 .topnav__link:hover::after { transform: scaleX(1); }
 
 .topnav__link--active { color: var(--fg); }
-.topnav__link--active::after { transform: scaleX(1); transition: none; }
+.topnav__link--active::after { transform: scaleX(1); }
 
 /* ── Theme Toggle ───────────────────────────────────────────────── */
 
