@@ -98,6 +98,7 @@ const pageDescription = description || site.meta.description;
       busy = true;
       revealed = !revealed;
       if (revealed) {
+        back.style.visibility = 'visible';
         const pos = reveals % (hues.length + 1);
         if (pos === 0) {
           back.removeAttribute('data-tinted');
@@ -117,7 +118,10 @@ const pageDescription = description || site.meta.description;
       front.animate(
         [{ clipPath: `circle(${a[0]} at ${at})` }, { clipPath: `circle(${a[1]} at ${at})` }],
         { duration: 450, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' },
-      ).onfinish = () => { busy = false; };
+      ).onfinish = () => {
+        if (!revealed) back.style.visibility = 'hidden';
+        busy = false;
+      };
     });
   }
 
