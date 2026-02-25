@@ -1,0 +1,25 @@
+---
+import type { TimelineEntry } from "../data/site";
+
+interface Props {
+  entry: TimelineEntry;
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="timeline-item">
+  <div class="timeline-item__header">
+    <div>
+      <h3 class="timeline-item__role">{entry.role}</h3>
+      <p class="timeline-item__org">{entry.organization}</p>
+    </div>
+  </div>
+  {entry.highlights.length > 0 && (
+    <ul class="timeline-item__highlights">
+      {entry.highlights.map((h) => (
+        <li>{h}</li>
+      ))}
+    </ul>
+  )}
+</div>

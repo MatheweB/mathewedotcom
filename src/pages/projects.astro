@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { site } from "../data/site";
+
+const { intro, projects } = site.art;
+---
+
+<Base title="Projects" description="Research implementations, creative coding, and generative art projects by Mathewe Banda.">
+  <div class="page-intro">
+    <h1>Projects</h1>
+    <p>{intro}</p>
+  </div>
+
+  {projects.map((project) => (
+    <ProjectCard project={project} />
+  ))}
+</Base>

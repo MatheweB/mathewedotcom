@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import { site } from "../data/site";
+
+const { intro, publications, interests, futureDirections } = site.research;
+const appliedResearch = site.cv.experience.slice(0, 1);
+---
+
+<Base title="Research" description="Research interests and publications by Mathewe Banda.">
+  <div class="page-intro">
+    <h1>Research</h1>
+    <p>{intro}</p>
+  </div>
+
+  <Section title="Publications">
+    {publications.map((pub) => (
+      <PublicationCard pub={pub} />
+    ))}
+  </Section>
+
+  <Section title="Applied Research">
+    {appliedResearch.map((entry) => (
+      <TimelineItem entry={entry} />
+    ))}
+  </Section>
+
+  <Section title="Research Interests">
+    {interests.map((interest) => (
+      <div class="interest-item">
+        <h3 class="interest-item__title">{interest.title}</h3>
+        <p class="interest-item__desc">{interest.description}</p>
+      </div>
+    ))}
+  </Section>
+
+  {futureDirections.length > 0 && (
+    <Section title="Future Directions">
+      <ul class="disc-list">
+        {futureDirections.map((direction) => (
+          <li>{direction}</li>
+        ))}
+      </ul>
+    </Section>
+  )}
+</Base>

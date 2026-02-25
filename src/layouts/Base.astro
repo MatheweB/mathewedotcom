@@ -1,0 +1,163 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { site } from "../data/site";
+import Sidebar from "../components/Sidebar.astro";
+import TopNav from "../components/TopNav.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} — ${site.meta.title}` : site.meta.title;
+const pageDescription = description || site.meta.description;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={pageDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={site.meta.siteUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+    <script is:inline>
+      (function() {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="site-layout">
+      <Sidebar />
+      <div class="site-main">
+        <TopNav />
+        <main class="page-container" transition:animate="none">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function initToggle(el: Element) {
+    if (el.hasAttribute('data-initialized')) return;
+    el.setAttribute('data-initialized', '');
+    el.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      document.documentElement.style.colorScheme = next;
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  function initSidebarToggle(el: Element) {
+    if (el.hasAttribute('data-initialized')) return;
+    el.setAttribute('data-initialized', '');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    el.addEventListener('click', () => sidebar?.classList.toggle('sidebar--open'));
+    backdrop?.addEventListener('click', () => sidebar?.classList.remove('sidebar--open'));
+  }
+
+  function updateNav() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.topnav__link').forEach((link) => {
+      const href = link.getAttribute('href');
+      const isActive = path === href || path === href + '/';
+      link.classList.toggle('topnav__link--active', isActive);
+    });
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar')?.classList.remove('sidebar--open');
+  }
+
+  function initPhotoFlip(el: Element) {
+    if (el.hasAttribute('data-initialized')) return;
+    el.setAttribute('data-initialized', '');
+    const front = el.querySelector('.sidebar__photo--front') as HTMLElement;
+    const back = el.querySelector('.sidebar__photo--back') as HTMLElement;
+    const hues = [0, 210, 145, 30, 270, 340, 175, 55];
+    let reveals = 0;
+    let revealed = false;
+    let busy = false;
+
+    function shuffle() {
+      for (let i = hues.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [hues[i], hues[j]] = [hues[j], hues[i]];
+      }
+    }
+    shuffle();
+
+    el.addEventListener('click', (e) => {
+      if (busy) return;
+      busy = true;
+      revealed = !revealed;
+      if (revealed) {
+        const pos = reveals % (hues.length + 1);
+        if (pos === 0) {
+          back.removeAttribute('data-tinted');
+        } else {
+          back.style.setProperty('--hue', String(hues[pos - 1]));
+          back.setAttribute('data-tinted', '');
+        }
+        if (pos === hues.length) shuffle();
+        reveals++;
+      }
+      const rect = el.getBoundingClientRect();
+      const x = ((e as MouseEvent).clientX - rect.left) / rect.width;
+      const y = ((e as MouseEvent).clientY - rect.top) / rect.height;
+      const at = `${(x * 100).toFixed(1)}% ${(y * 100).toFixed(1)}%`;
+      const r = (Math.hypot(Math.max(x, 1 - x), Math.max(y, 1 - y)) * 100).toFixed(1) + '%';
+      const a = revealed ? [r, '0%'] : ['0%', r];
+      front.animate(
+        [{ clipPath: `circle(${a[0]} at ${at})` }, { clipPath: `circle(${a[1]} at ${at})` }],
+        { duration: 450, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' },
+      ).onfinish = () => { busy = false; };
+    });
+  }
+
+  // Before DOM swap: apply theme to incoming document to prevent flash
+  document.addEventListener('astro:before-swap', (e) => {
+    const theme = localStorage.getItem('theme') || 'light';
+    (e as any).newDocument.documentElement.setAttribute('data-theme', theme);
+    (e as any).newDocument.documentElement.style.colorScheme = theme;
+  });
+
+  // After DOM swap: update nav, close mobile sidebar
+  document.addEventListener('astro:after-swap', () => {
+    updateNav();
+    closeSidebar();
+  });
+
+  // After full page load: attach listeners on persisted elements
+  document.addEventListener('astro:page-load', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) initToggle(themeToggle);
+
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    if (sidebarToggle) initSidebarToggle(sidebarToggle);
+
+    const photoFlip = document.getElementById('photo-flip');
+    if (photoFlip) initPhotoFlip(photoFlip);
+
+    updateNav();
+  });
+</script>

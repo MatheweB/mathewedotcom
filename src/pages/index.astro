@@ -1,0 +1,38 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+
+const { bio } = site.home;
+const { publications } = site.research;
+---
+
+<Base>
+  <div class="page-intro">
+    <h1>About</h1>
+    <p>{bio[0]}</p>
+  </div>
+
+  <div class="home-bio">
+    {bio.slice(1).map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </div>
+
+  <section class="home-section">
+    <h2 class="home-section__title">
+      Research Highlights
+      <a href="/research" class="home-section__link">View all &rarr;</a>
+    </h2>
+
+    {publications.slice(0, 2).map((pub) => (
+      <div class="home-pub">
+        <h3 class="home-pub__title">
+          {pub.url ? <a href={pub.url}>{pub.title}</a> : pub.title}
+        </h3>
+        <p class="home-pub__meta">{pub.venue}{pub.venueNumber ? `, ${pub.venueNumber}` : ""} &middot; {pub.year}</p>
+      </div>
+    ))}
+
+  </section>
+
+</Base>

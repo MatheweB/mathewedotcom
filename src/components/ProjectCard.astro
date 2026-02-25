@@ -1,0 +1,18 @@
+---
+import type { ArtProject } from "../data/site";
+
+interface Props {
+  project: ArtProject;
+}
+
+const { project } = Astro.props;
+---
+
+<div class="project-item">
+  <h3 class="project-item__title">{project.title}</h3>
+  <p class="project-item__description">{project.description}</p>
+  <div class="project-item__links">
+    {project.url && <a href={project.url}>Portfolio</a>}
+    {project.repoUrl && <a href={project.repoUrl}>Source</a>}
+  </div>
+</div>

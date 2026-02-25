@@ -1,0 +1,61 @@
+---
+import { site } from "../data/site";
+
+const { greeting, tagline, profileImage, location, socialLinks } = site.home;
+---
+
+<aside class="sidebar" id="sidebar" transition:persist>
+  <div class="sidebar__inner">
+    <div class="sidebar__profile">
+      <div class="sidebar__photo-flip" id="photo-flip">
+        <div
+          class="sidebar__photo sidebar__photo--back"
+          role="img"
+          aria-label={`${greeting} illustration`}
+        ></div>
+        <img
+          src={profileImage}
+          alt={greeting}
+          class="sidebar__photo sidebar__photo--front"
+          width="140"
+          height="140"
+        />
+      </div>
+      <h1 class="sidebar__name">{greeting}</h1>
+      <p class="sidebar__tagline">{tagline}</p>
+    </div>
+
+    <div class="sidebar__meta">
+      <span class="sidebar__location">{location}</span>
+    </div>
+
+    <nav class="sidebar__social" aria-label="Social links">
+      {socialLinks.map((link) => (
+        <a
+          href={link.url}
+          class="sidebar__social-link"
+          data-social={link.label.toLowerCase()}
+          target={link.url.startsWith("mailto:") ? undefined : "_blank"}
+          rel={link.url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+          aria-label={link.label}
+          title={link.label}
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d={link.icon} />
+          </svg>
+        </a>
+      ))}
+    </nav>
+  </div>
+
+</aside>
+
+<button class="sidebar__toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+
+<div class="sidebar-backdrop" id="sidebar-backdrop"></div>

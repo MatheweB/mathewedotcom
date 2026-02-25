@@ -1,0 +1,33 @@
+---
+import type { Publication } from "../data/site";
+
+interface Props {
+  pub: Publication;
+}
+
+const { pub } = Astro.props;
+---
+
+<div class="pub-card">
+  <h3 class="pub-card__title">
+    {pub.title}
+  </h3>
+  <p class="pub-card__authors">{pub.authors.join(", ")}</p>
+  <p class="pub-card__venue">
+    <em>{pub.venue}</em>{pub.venueNumber ? `, ${pub.venueNumber}` : ""} ({pub.year})
+  </p>
+  {(pub.url || pub.repoUrl) && (
+    <div class="pub-card__links">
+      {pub.url && <a href={pub.url}>Paper</a>}
+      {pub.repoUrl && <a href={pub.repoUrl}>Code</a>}
+    </div>
+  )}
+  {pub.abstract && <p class="pub-card__abstract">{pub.abstract}</p>}
+  {pub.highlights && pub.highlights.length > 0 && (
+    <ul class="pub-card__highlights">
+      {pub.highlights.map((h) => (
+        <li>{h}</li>
+      ))}
+    </ul>
+  )}
+</div>
