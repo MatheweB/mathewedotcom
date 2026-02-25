@@ -38,7 +38,7 @@ export interface Skill {
   items: string[];
 }
 
-export interface ArtProject {
+export interface Project {
   title: string;
   description: string;
   url?: string;
@@ -76,9 +76,9 @@ export interface SiteConfig {
     skills: Skill[];
     volunteer?: TimelineEntry[];
   };
-  art: {
+  projects: {
     intro: string;
-    projects: ArtProject[];
+    items: Project[];
   };
   footer: {
     copyright: string;
@@ -297,11 +297,11 @@ export const site: SiteConfig = {
         items: ["Python", "Java", "C", "C++", "Go", "SQL", "Swift", "Kotlin", "Bash"],
       },
       {
-        category: "Libraries & Frameworks",
+        category: "Tools & Platforms",
         items: ["PyTorch", "NumPy", "Jupyter", "LangChain", "RStudio", "Mathematica", "GCP", "Linux"],
       },
       {
-        category: "Research & AI",
+        category: "Research",
         items: [
           "AI/ML",
           "LLM Development",
@@ -345,10 +345,10 @@ export const site: SiteConfig = {
     ],
   },
 
-  art: {
+  projects: {
     intro:
       "Open-source research implementations and libraries.",
-    projects: [
+    items: [
       {
         title: "WiseExplorer",
         description:

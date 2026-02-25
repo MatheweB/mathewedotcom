@@ -26,18 +26,13 @@ const pageDescription = description || site.meta.description;
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={site.meta.siteUrl} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
     <ViewTransitions />
     <script is:inline>
-      (function() {
-        var theme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-        document.documentElement.style.colorScheme = theme;
-      })();
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
     </script>
   </head>
   <body>
@@ -55,13 +50,19 @@ const pageDescription = description || site.meta.description;
 </html>
 
 <script>
+  import { initPhotoReveal } from '../scripts/photo-reveal';
+
+  function applyTheme(root: HTMLElement, theme: string) {
+    root.setAttribute('data-theme', theme);
+    root.style.colorScheme = theme;
+  }
+
   function initToggle(el: Element) {
     if (el.hasAttribute('data-initialized')) return;
     el.setAttribute('data-initialized', '');
     el.addEventListener('click', () => {
       const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      document.documentElement.style.colorScheme = next;
+      applyTheme(document.documentElement, next);
       localStorage.setItem('theme', next);
     });
   }
@@ -70,80 +71,23 @@ const pageDescription = description || site.meta.description;
     const path = window.location.pathname;
     document.querySelectorAll('.topnav__link').forEach((link) => {
       const href = link.getAttribute('href');
-      const isActive = path === href || path === href + '/';
-      link.classList.toggle('topnav__link--active', isActive);
+      link.classList.toggle('topnav__link--active', path === href || path === href + '/');
     });
   }
 
-  function initPhotoReveal(el: Element) {
-    if (el.hasAttribute('data-initialized')) return;
-    el.setAttribute('data-initialized', '');
-    const front = el.querySelector('.sidebar__photo--front') as HTMLElement;
-    const back = el.querySelector('.sidebar__photo--back') as HTMLElement;
-    const hues = [0, 210, 145, 30, 270, 340, 175, 55];
-    let reveals = 0;
-    let revealed = false;
-    let busy = false;
-
-    function shuffle() {
-      for (let i = hues.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [hues[i], hues[j]] = [hues[j], hues[i]];
-      }
-    }
-    shuffle();
-
-    el.addEventListener('click', (e) => {
-      if (busy) return;
-      busy = true;
-      revealed = !revealed;
-      if (revealed) {
-        back.style.visibility = 'visible';
-        const pos = reveals % (hues.length + 1);
-        if (pos === 0) {
-          back.removeAttribute('data-tinted');
-        } else {
-          back.style.setProperty('--hue', String(hues[pos - 1]));
-          back.setAttribute('data-tinted', '');
-        }
-        if (pos === hues.length) shuffle();
-        reveals++;
-      }
-      const rect = el.getBoundingClientRect();
-      const x = ((e as MouseEvent).clientX - rect.left) / rect.width;
-      const y = ((e as MouseEvent).clientY - rect.top) / rect.height;
-      const at = `${(x * 100).toFixed(1)}% ${(y * 100).toFixed(1)}%`;
-      const r = (Math.hypot(Math.max(x, 1 - x), Math.max(y, 1 - y)) * 100).toFixed(1) + '%';
-      const a = revealed ? [r, '0%'] : ['0%', r];
-      front.animate(
-        [{ clipPath: `circle(${a[0]} at ${at})` }, { clipPath: `circle(${a[1]} at ${at})` }],
-        { duration: 450, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' },
-      ).onfinish = () => {
-        if (!revealed) back.style.visibility = 'hidden';
-        busy = false;
-      };
-    });
-  }
-
-  // Before DOM swap: apply theme to incoming document to prevent flash
   document.addEventListener('astro:before-swap', (e) => {
     const theme = localStorage.getItem('theme') || 'light';
-    (e as any).newDocument.documentElement.setAttribute('data-theme', theme);
-    (e as any).newDocument.documentElement.style.colorScheme = theme;
+    applyTheme((e as any).newDocument.documentElement, theme);
   });
 
-  // After DOM swap: update nav highlight
-  document.addEventListener('astro:after-swap', () => {
-    updateNav();
-  });
+  document.addEventListener('astro:after-swap', updateNav);
 
-  // After full page load: attach listeners on persisted elements
   document.addEventListener('astro:page-load', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) initToggle(themeToggle);
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) initToggle(toggle);
 
-    const photoReveal = document.getElementById('photo-reveal');
-    if (photoReveal) initPhotoReveal(photoReveal);
+    const photo = document.getElementById('photo-reveal');
+    if (photo) initPhotoReveal(photo);
 
     updateNav();
   });

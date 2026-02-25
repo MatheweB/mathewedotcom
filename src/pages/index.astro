@@ -9,11 +9,7 @@ const { publications } = site.research;
 <Base>
   <div class="page-intro">
     <h1>About</h1>
-    <p>{bio[0]}</p>
-  </div>
-
-  <div class="home-bio">
-    {bio.slice(1).map((paragraph) => (
+    {bio.map((paragraph) => (
       <p>{paragraph}</p>
     ))}
   </div>

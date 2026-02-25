@@ -28,7 +28,7 @@ const { greeting, tagline, profileImage, location, socialLinks } = site.home;
     </div>
 
     <div class="sidebar__meta">
-      <span class="sidebar__location">{location}</span>
+      <span>{location}</span>
     </div>
 
     <nav class="sidebar__social" aria-label="Social links">
@@ -42,7 +42,7 @@ const { greeting, tagline, profileImage, location, socialLinks } = site.home;
           aria-label={link.label}
           title={link.label}
         >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
             <path d={link.icon} />
           </svg>
         </a>
