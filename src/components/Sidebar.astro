@@ -4,10 +4,10 @@ import { site } from "../data/site";
 const { greeting, tagline, profileImage, location, socialLinks } = site.home;
 ---
 
-<aside class="sidebar" id="sidebar" transition:persist>
+<aside class="sidebar" id="sidebar" transition:persist transition:animate="none">
   <div class="sidebar__inner">
     <div class="sidebar__profile">
-      <div class="sidebar__photo-flip" id="photo-flip">
+      <div class="sidebar__photo-reveal" id="photo-reveal">
         <div
           class="sidebar__photo sidebar__photo--back"
           role="img"

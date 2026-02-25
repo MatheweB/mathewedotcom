@@ -158,7 +158,7 @@ ul { list-style: none; padding: 0; }
 
 .sidebar__profile { text-align: center; }
 
-.sidebar__photo-flip {
+.sidebar__photo-reveal {
   width: 140px;
   height: 140px;
   margin: 0 auto var(--space-6);
@@ -626,13 +626,13 @@ ul { list-style: none; padding: 0; }
     min-width: 0;
   }
 
-  .sidebar__photo-flip {
+  .sidebar__photo-reveal {
     width: 110px;
     height: 110px;
     margin: 0;
     flex-shrink: 0;
   }
-  .sidebar__photo-flip .sidebar__photo {
+  .sidebar__photo-reveal .sidebar__photo {
     width: 110px;
     height: 110px;
   }

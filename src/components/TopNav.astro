@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 const pathname = Astro.url.pathname;
 ---
 
-<header class="topnav" transition:persist>
+<header class="topnav" transition:persist transition:animate="none">
   <nav class="topnav__inner" aria-label="Main navigation">
     <ul class="topnav__links">
       {site.nav.links.map((link) => (

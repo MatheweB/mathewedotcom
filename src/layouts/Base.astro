@@ -75,7 +75,7 @@ const pageDescription = description || site.meta.description;
     });
   }
 
-  function initPhotoFlip(el: Element) {
+  function initPhotoReveal(el: Element) {
     if (el.hasAttribute('data-initialized')) return;
     el.setAttribute('data-initialized', '');
     const front = el.querySelector('.sidebar__photo--front') as HTMLElement;
@@ -142,8 +142,8 @@ const pageDescription = description || site.meta.description;
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) initToggle(themeToggle);
 
-    const photoFlip = document.getElementById('photo-flip');
-    if (photoFlip) initPhotoFlip(photoFlip);
+    const photoReveal = document.getElementById('photo-reveal');
+    if (photoReveal) initPhotoReveal(photoReveal);
 
     updateNav();
   });
