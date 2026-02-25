@@ -7,10 +7,6 @@ const pathname = Astro.url.pathname;
 
 <header class="topnav" transition:persist>
   <nav class="topnav__inner" aria-label="Main navigation">
-    <a href="/" class="topnav__brand">
-      <img src={site.home.profileImage} alt="" class="topnav__photo" width="28" height="28" />
-      <span class="topnav__name">{site.home.greeting}</span>
-    </a>
     <ul class="topnav__links">
       {site.nav.links.map((link) => (
         <li>

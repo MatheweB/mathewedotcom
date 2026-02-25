@@ -66,15 +66,6 @@ const pageDescription = description || site.meta.description;
     });
   }
 
-  function initSidebarToggle(el: Element) {
-    if (el.hasAttribute('data-initialized')) return;
-    el.setAttribute('data-initialized', '');
-    const sidebar = document.getElementById('sidebar');
-    const backdrop = document.getElementById('sidebar-backdrop');
-    el.addEventListener('click', () => sidebar?.classList.toggle('sidebar--open'));
-    backdrop?.addEventListener('click', () => sidebar?.classList.remove('sidebar--open'));
-  }
-
   function updateNav() {
     const path = window.location.pathname;
     document.querySelectorAll('.topnav__link').forEach((link) => {
@@ -82,10 +73,6 @@ const pageDescription = description || site.meta.description;
       const isActive = path === href || path === href + '/';
       link.classList.toggle('topnav__link--active', isActive);
     });
-  }
-
-  function closeSidebar() {
-    document.getElementById('sidebar')?.classList.remove('sidebar--open');
   }
 
   function initPhotoFlip(el: Element) {
@@ -141,25 +128,15 @@ const pageDescription = description || site.meta.description;
     (e as any).newDocument.documentElement.style.colorScheme = theme;
   });
 
-  // After DOM swap: update nav, close mobile sidebar
+  // After DOM swap: update nav highlight
   document.addEventListener('astro:after-swap', () => {
     updateNav();
-    closeSidebar();
   });
 
   // After full page load: attach listeners on persisted elements
   document.addEventListener('astro:page-load', () => {
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) initToggle(themeToggle);
-
-    const sidebarToggle = document.getElementById('sidebar-toggle');
-    if (sidebarToggle) initSidebarToggle(sidebarToggle);
-
-    const sidebarClose = document.getElementById('sidebar-close');
-    if (sidebarClose && !sidebarClose.hasAttribute('data-initialized')) {
-      sidebarClose.setAttribute('data-initialized', '');
-      sidebarClose.addEventListener('click', () => closeSidebar());
-    }
 
     const photoFlip = document.getElementById('photo-flip');
     if (photoFlip) initPhotoFlip(photoFlip);

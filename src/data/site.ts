@@ -43,7 +43,6 @@ export interface ArtProject {
   description: string;
   url?: string;
   repoUrl?: string;
-  techniques?: string[];
 }
 
 export interface SiteConfig {
@@ -59,7 +58,6 @@ export interface SiteConfig {
     greeting: string;
     tagline: string;
     profileImage: string; // Path relative to /public
-    highlights: string[];
     bio: string[];
     location: string;
     socialLinks: SocialLink[];
@@ -110,11 +108,6 @@ export const site: SiteConfig = {
     greeting: "Mathewe Banda",
     tagline: "Computer Scientist",
     profileImage: "/profile.png",
-    highlights: [
-      "Interpretable AI",
-      "5 Years at Google",
-      "Honors Thesis in Multi-Agent RL",
-    ],
     bio: [
       "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful.",
       "I graduated with High Honors from Oberlin College in Computer Science with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory, and I've continued developing that work independently since graduation.",
