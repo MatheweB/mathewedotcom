@@ -626,14 +626,14 @@ ul { list-style: none; padding: 0; }
   }
 
   .sidebar__photo-flip {
-    width: 64px;
-    height: 64px;
+    width: 110px;
+    height: 110px;
     margin: 0;
     flex-shrink: 0;
   }
   .sidebar__photo-flip .sidebar__photo {
-    width: 64px;
-    height: 64px;
+    width: 110px;
+    height: 110px;
   }
 
   .sidebar__meta { display: none; }
