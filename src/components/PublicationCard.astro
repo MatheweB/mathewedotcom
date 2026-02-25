@@ -18,8 +18,8 @@ const { pub } = Astro.props;
   </p>
   {(pub.url || pub.repoUrl) && (
     <div class="pub-card__links">
-      {pub.url && <a href={pub.url}>Paper</a>}
-      {pub.repoUrl && <a href={pub.repoUrl}>Code</a>}
+      {pub.url && <a href={pub.url} target="_blank" rel="noopener noreferrer">Paper</a>}
+      {pub.repoUrl && <a href={pub.repoUrl} target="_blank" rel="noopener noreferrer">Code</a>}
     </div>
   )}
   {pub.abstract && <p class="pub-card__abstract">{pub.abstract}</p>}

@@ -23,7 +23,7 @@ const { publications } = site.research;
     {publications.slice(0, 2).map((pub) => (
       <div class="home-pub">
         <h3 class="home-pub__title">
-          {pub.url ? <a href={pub.url}>{pub.title}</a> : pub.title}
+          {pub.url ? <a href={pub.url} target="_blank" rel="noopener noreferrer">{pub.title}</a> : pub.title}
         </h3>
         <p class="home-pub__meta">{pub.venue}{pub.venueNumber ? `, ${pub.venueNumber}` : ""} &middot; {pub.year}</p>
       </div>
