@@ -26,11 +26,13 @@ const pageDescription = description || site.meta.description;
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={site.meta.siteUrl} />
+    <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
     <ViewTransitions />
     <script is:inline>
-      const theme = localStorage.getItem('theme') || 'light';
+      const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.style.colorScheme = theme;
     </script>
@@ -76,7 +78,7 @@ const pageDescription = description || site.meta.description;
   }
 
   document.addEventListener('astro:before-swap', (e) => {
-    const theme = localStorage.getItem('theme') || 'light';
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     applyTheme((e as any).newDocument.documentElement, theme);
   });
 
