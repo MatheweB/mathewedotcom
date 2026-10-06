@@ -112,7 +112,7 @@ export const site: SiteConfig = {
       "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
       "At Google, I led a research agenda to improve open-source developer workflows with LLMs by creating a graph-structured reasoning framework to automate test-generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
       "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory",
-      "I'm currently applying to PhD programs in interpretable AI, with interests in program synthesis and symbolic library learning, program-synthesized concepts for concept bottleneck models, and sample-efficient symbolic methods for intractably deep search problems.",
+      "I'm currently applying to PhD programs in interpretable AI, with interests in program synthesis and symbolic library learning, program-synthesized concepts for concept bottleneck models, and sample-efficient RL methods for intractably deep search problems.",
       "As a side-passion, I make digital art with integer programming and other optimization techniques, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at madebymath.art.",
     ],
     location: "San Francisco, CA",
@@ -137,7 +137,7 @@ export const site: SiteConfig = {
 
   research: {
     intro:
-      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models, and believe that if we can't explain why a system makes a decision, we can't truly trust it. My current interests span program synthesis and symbolic library learning, concept bottleneck models, and sample-efficient reinforcement learning for general game playing.",
+      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models, and believe that if we can't explain why a system makes a decision, we can't truly trust it. My current interests span program synthesis and symbolic library learning, concept bottleneck models, sample-efficient RL, and general game playing.",
     publications: [
       {
         title:
@@ -169,9 +169,9 @@ export const site: SiteConfig = {
           "Using program synthesis as the concept generator for concept bottleneck models in place of hand-picked or LLM-generated concepts, and testing what that changes for predictive accuracy and interpretability across problem spaces.",
       },
       {
-        title: "General Game Playing & Reinforcement Learning",
+        title: "Reinforcement Learning & General Game Playing",
         description:
-          "Sample-efficient techniques that make symbolic approaches tractable for intractably deep search problems.",
+          "Sample-efficient methods that make symbolic approaches tractable for intractably deep search problems.",
       },
     ],
   },
