@@ -91,7 +91,7 @@ export const site: SiteConfig = {
   meta: {
     title: "Mathewe Banda",
     description:
-      "Computer scientist focused on interpretable AI and reinforcement learning. Also makes art with math.",
+      "Computer scientist interested in interpretable AI: program synthesis, symbolic library learning, and reinforcement learning. Also makes art with math.",
     siteUrl: "https://mathewe.com",
   },
 
@@ -109,11 +109,11 @@ export const site: SiteConfig = {
     tagline: "Computer Scientist",
     profileImage: "/profile.png",
     bio: [
-      "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful.",
-      "I graduated with High Honors from Oberlin College in Computer Science with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory, and I've continued developing that work independently since graduation.",
-      "I joined Google to learn how to turn research ideas into working systems. Over five years, I led applied research on LLM-driven developer automation and developed methods for constructing structured training data from large C++/Java codebases. I collaborated with DeepMind and CoreML on data specifications for Google's internal models and developed an unsupervised approach to root-cause diagnosis for Android using clustering on T5X embeddings.",
-      "My research focuses on interpretable AI and data-efficient reinforcement learning, and I'm currently applying to PhD programs in computer science.",
-      "Outside of work, I create digital images using linear optimization and constraints, building on independent research with Professor Robert Bosch at Oberlin. You can find my art and methodology at madebymath.art.",
+      "I'm a computer scientist interested in interpretable AI systems whose reasoning can be inspected, trusted, and improved by the people who use them. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
+      "At Google, I led a research agenda to dramatically improve open-source developer workflows using LLMs to automate unit-test creation. I designed hybrid embedding and code-coverage evaluations for our experiments, and created a graph-structured reasoning framework for automated test generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for the first training of Google's internal models on open-source code, led the API-correctness and code-coverage infrastructure for Android Mainline (enabling continuous releases to 800+ million devices), and developed an unsupervised root-cause analysis method to uncover latent Android Infrastructure failure patterns with unlabeled data",
+      "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis framed general game playing as a bandit-arms problem and solved it with a two-stage multiagent Monte Carlo search, and I've continued developing that work independently since.",
+      "I'm currently applying to PhD programs in computer science. My research interests are program synthesis and symbolic library learning (treating compression as learning), program-synthesized concepts for concept bottleneck models, and sample-efficient symbolic methods for intractably deep search problems.",
+      "As a side-passion, I make digital art with integer programming and other optimization techniques, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at madebymath.art.",
     ],
     location: "San Francisco, CA",
     socialLinks: [
@@ -137,7 +137,7 @@ export const site: SiteConfig = {
 
   research: {
     intro:
-      "My research centers on interpretable AI and reinforcement learning: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent approaches over black-box models, and I believe that if we can't explain why a system makes its decisions, we can't truly trust it.",
+      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models—if we can't explain why a system makes a decision, we can't truly trust it. My current work spans program synthesis and symbolic library learning, concept bottleneck models, and sample-efficient reinforcement learning for general game playing.",
     publications: [
       {
         title:
@@ -149,29 +149,30 @@ export const site: SiteConfig = {
         url: "https://digitalcommons.oberlin.edu/honors/116",
         repoUrl: "https://github.com/MatheweB/WiseExplorer",
         abstract:
-          "An interpretable AI model for multi-agent reinforcement learning that makes robust decisions under uncertainty. The model uses Monte Carlo Tree Search that converges to Nash Equilibria, producing informed self-play data rather than random sampling. This yields fully transparent decision pathways and achieves high accuracy on chess puzzles through two-stage RL. It runs in real-time without pre-training and generalizes to any domain that can be formally defined as a game, including autonomous navigation and real-time strategy.",
-        highlights: [],
+          "An interpretable general game player that takes only the rules of a game as input, requires no pre-training, and whose reasoning is traceable to accumulated self-play statistics. Move selection is framed as a multi-armed bandit problem and solved with a two-stage multiagent Monte Carlo search: the first stage prunes losing branches and the second exploits promising ones with a UCB-style policy, converging to Nash equilibria. The player achieves perfect tic-tac-toe, reliably finds winning moves in Nim, and plays strategically in minichess.",
+        highlights: [
+          "Rules-only input, no pre-training, and reasoning traceable to accumulated self-play statistics",
+          "Move selection framed as a multi-armed bandit, solved by a two-stage multiagent Monte Carlo search that prunes losing branches and exploits promising ones with a UCB-style policy",
+          "Perfect tic-tac-toe play; reliably finds winning moves in Nim; strategic play in minichess",
+        ],
       },
     ],
     interests: [
       {
-        title: "Interpretable AI",
+        title: "Program Synthesis & Symbolic Regression",
         description:
-          "Designing machine learning systems whose decisions can be understood and trusted by humans. Developing transparent approaches that provide causal explanations rather than opaque predictions.",
+          "Symbolic, non-neural library learning that accumulates data-efficient, reusable abstractions across domains. Minimum description length and e-graphs to induce concise generalized solutions, treating compression as learning.",
       },
       {
-        title: "Reinforcement Learning",
+        title: "Concept Bottleneck Models",
         description:
-          "Designing RL agents that learn effectively from limited experience in complex environments. My honors thesis applied multi-agent RL with game-theoretic principles to general game playing, focusing on informed exploration over exhaustive search.",
+          "Using program synthesis as the concept generator for concept bottleneck models in place of hand-picked or LLM-generated concepts, and testing what that changes for predictive accuracy and interpretability across problem spaces.",
       },
       {
-        title: "Constraint-Based Mathematical Modeling",
+        title: "General Game Playing & Reinforcement Learning",
         description:
-          "Using linear optimization and constraint satisfaction to solve problems with structure, from mathematical art to resource allocation. I'm drawn to approaches where the constraints themselves encode meaning.",
+          "Sample-efficient techniques that make symbolic approaches tractable for intractably deep search problems.",
       },
-    ],
-    futureDirections: [
-      "Formalizing data-efficient reinforcement learning in domains with intractable decision spaces. Rather than simulating every possibility, I want to develop methods that identify which regions of a search space are worth exploring, using interpretable reasoning to guide and explain that process.",
     ],
   },
 
@@ -179,36 +180,38 @@ export const site: SiteConfig = {
     research: [
       {
         organization: "Oberlin College",
-        role: "Honors Thesis Researcher",
+        role: "Computer Science Honors Researcher, Professor Robert Geitz",
         location: "Oberlin, OH",
         startDate: "2018",
         endDate: "2019",
         type: "research",
         highlights: [
-          "Designed a novel interpretable model for multi-agent reinforcement learning in general game playing",
-          "Applied Monte Carlo methods and Nash Equilibria to achieve real-time inference without pre-training",
+          "Earned High Departmental Honors in Computer Science for a year-long independent research project culminating in a qualifying exam, thesis defense, and public presentation",
+          "Designed a novel interpretable model for general game playing: a two-stage multiagent Monte Carlo search that converges to Nash equilibria and runs in real time without pre-training",
         ],
       },
       {
         organization: "Oberlin College",
-        role: "Independent Researcher, Professor Robert Bosch",
+        role: "Linear Optimization Researcher, Professor Robert Bosch",
         location: "Oberlin, OH",
-        startDate: "2017",
+        startDate: "2018",
         endDate: "2019",
         type: "research",
         highlights: [
-          "Developed integer linear programming models that generate digital artwork from mathematical constraints. Every pixel in the output is determined by an optimization solver",
+          "Invented constraint-optimization algorithms that generate digital artworks",
+          "Used acyclicity, connectivity, planarity, and two-colorability as constraints to render images as connected spanning trees, two-color convex tilings, and morphing polygon grids with flexible vertices (documented at madebymath.art)",
         ],
       },
       {
         organization: "Oberlin College",
-        role: "Independent Researcher, Professor David W. Orr",
+        role: "Environmental Sustainability Research, Professor Keith Tarvin",
         location: "Oberlin, OH",
-        startDate: "2016",
-        endDate: "2016",
+        startDate: "2017",
+        endDate: "2018",
         type: "research",
         highlights: [
-          "Designed proposals for piezoelectric energy harvesting systems on campus, evaluating feasibility and expected output across candidate sites",
+          "Conducted a literature review on the political, economic, and engineering challenges of piezoelectric energy as a viable renewable",
+          "Proposed uses of piezoelectricity on Oberlin's campus, evaluating feasibility and expected energy output across candidate sites",
         ],
       },
     ],
@@ -221,10 +224,11 @@ export const site: SiteConfig = {
         endDate: "Jul 2024",
         type: "work",
         highlights: [
-          "Led a research agenda on how LLMs can automate developer workflows in open-source codebases. Scoped the problem space, designed experiments, and developed a prompting framework for automated test generation across AOSP and ChromeOS",
-          "Designed language-agnostic code-graph representations using Kythe to construct structured C++/Java training datasets from large-scale open-source codebases",
-          "Collaborated with DeepMind and CoreML teams to define data specifications and quality criteria for training Google's internal models on open-source code",
-          "Developed an unsupervised root-cause diagnosis method for Android using density-based clustering on T5X embeddings to group infrastructure errors by underlying cause",
+          "Led a research agenda to discover techniques for LLMs to dramatically improve open-source developer workflows",
+          "Proposed unit-test automation as the research objective, designed evaluation frameworks (hybrid embedding + code-coverage evals) and experiments, and developed a graph-structured reasoning framework for automated test generation across AndroidOS",
+          "Built structured, hierarchical datasets of Android's source code to improve one-shot performance and fine-tuning",
+          "Collaborated with DeepMind and CoreML teams to define data specifications and quality criteria for training Google's internal models on open-source code—the first time these models were trained on open-source codebases",
+          "Developed an unsupervised root-cause analysis method for Android OS infrastructure errors using T5X embeddings and density-based clustering, reducing incident response time by 90%",
         ],
       },
       {
@@ -235,7 +239,10 @@ export const site: SiteConfig = {
         endDate: "Apr 2022",
         type: "work",
         highlights: [
-          "Designed API correctness verification for Android Mainline. Defined coverage criteria and developed infrastructure that enabled continuous releases across 800+ million devices and 5 platforms",
+          "Technical lead on API correctness and code-coverage infrastructure for Android Mainline (modularizing the Android operating system)",
+          "Enabled continuous AndroidOS releases across 800+ million devices and 5 platforms",
+          "Collaborated with product managers and UX designers to deliver interactive developer tools used by 200+ Google engineers",
+          "Built interactive tools that let developers identify and resolve coverage gaps, reducing time-to-resolution by 95%",
         ],
       },
       {
@@ -246,8 +253,21 @@ export const site: SiteConfig = {
         endDate: "Apr 2020",
         type: "work",
         highlights: [
-          "Investigated and optimized Android smart-sync performance. Identified bottlenecks and reduced project sync times by up to 99%",
-          "Developed a photomosaic generation algorithm that reconstructs source images by matching and tiling thousands of database images",
+          "Optimized Android smart-sync performance, enabling developers to sync to the latest best-known AndroidOS baseline up to 99% (one day) faster",
+          "Developed a photomosaic image-generation algorithm that recreates a source image by tiling thousands of images from a database (the Met gallery database)",
+        ],
+      },
+      {
+        organization: "Optoro",
+        role: "Software Engineer Intern",
+        location: "Washington, DC",
+        startDate: "Jun 2018",
+        endDate: "Aug 2018",
+        type: "internship",
+        highlights: [
+          "Developed the first presubmit testing infrastructure for the technology stack",
+          "Designed UI features for the BULQ iOS app and web landing page",
+          "Built internal front-end tools that let non-engineering teams independently update their live web content",
         ],
       },
     ],
@@ -259,22 +279,18 @@ export const site: SiteConfig = {
         startDate: "2015",
         endDate: "2019",
         type: "education",
-        highlights: [
-          "Major GPA: 3.86",
-          "Graduated with High Honors",
-        ],
       },
     ],
     teaching: [
       {
         organization: "Google",
         role: "Engineering Mentor",
-        location: "Mountain View, CA",
-        startDate: "2021",
+        location: "San Francisco, CA",
+        startDate: "2022",
         endDate: "2024",
         type: "teaching",
         highlights: [
-          "Mentored 12+ early-career engineers through Google's Engineering Residency and Early Career Immersion programs",
+          "Mentored and taught 12+ early-career engineers across several teams through Google's Engineering Residency and Early Career Immersion programs",
           "Guided project scoping, design decisions, and code reviews to accelerate onboarding and independent contribution",
         ],
       },
@@ -282,40 +298,12 @@ export const site: SiteConfig = {
         organization: "Oberlin College",
         role: "Computer Science Lab Assistant",
         location: "Oberlin, OH",
-        startDate: "2016",
-        endDate: "2018",
+        startDate: "2017",
+        endDate: "2019",
         type: "teaching",
         highlights: [
           "Guided introductory CS students through lab exercises and debugging, reinforcing core programming concepts",
           "Graded labs and provided detailed feedback to support student learning",
-        ],
-      },
-    ],
-    skills: [
-      {
-        category: "Languages",
-        items: ["Python", "Java", "C", "C++", "Go", "SQL", "Swift", "Kotlin", "Bash"],
-      },
-      {
-        category: "Tools & Platforms",
-        items: ["PyTorch", "NumPy", "Jupyter", "LangChain", "RStudio", "Mathematica", "GCP", "Linux"],
-      },
-      {
-        category: "Research",
-        items: [
-          "AI/ML",
-          "LLM Development",
-          "Retrieval Augmented Generation",
-          "Data Analysis & Visualization",
-          "Linear Optimization",
-        ],
-      },
-      {
-        category: "Systems",
-        items: [
-          "Distributed Systems",
-          "Asynchronous Programming",
-          "Cryptography",
         ],
       },
     ],
@@ -328,7 +316,7 @@ export const site: SiteConfig = {
         endDate: "Aug 2016",
         type: "volunteer",
         highlights: [
-          "Gained hands-on medical experience in organ donation compatibility testing, processing 50+ protein samples daily",
+          "Gained hands-on medical experience in organ donation compatibility testing, processing protein samples, and managing patient data",
         ],
       },
       {
@@ -352,7 +340,7 @@ export const site: SiteConfig = {
       {
         title: "WiseExplorer",
         description:
-          "A modern re-implementation of my honors thesis on multi-agent reinforcement learning in General Game Playing. Uses dual-phase MCTS that deliberately explores both promising and unpromising paths, with new concepts like statistical anchoring and probability distribution sampling that I developed independently since 2019. Requires zero prior knowledge and works with any N-player game.",
+          "An updated re-implementation of my honors thesis on general game playing as a bandit-arms problem. Uses a two-stage multiagent Monte Carlo search that prunes losing branches, then exploits promising ones with a UCB-style policy. Statistical anchoring and probability distribution sampling were developed independently since 2019. Requires zero prior knowledge and works with any N-player game.",
         repoUrl: "https://github.com/MatheweB/WiseExplorer",
       },
       {
