@@ -66,14 +66,14 @@ export interface SiteConfig {
     intro: string;
     publications: Publication[];
     interests: ResearchInterest[];
-    futureDirections: string[];
+    futureDirections?: string[];
   };
   cv: {
     research: TimelineEntry[];
     experience: TimelineEntry[];
     education: TimelineEntry[];
     teaching: TimelineEntry[];
-    skills: Skill[];
+    skills?: Skill[];
     volunteer?: TimelineEntry[];
   };
   projects: {
@@ -279,6 +279,7 @@ export const site: SiteConfig = {
         startDate: "2015",
         endDate: "2019",
         type: "education",
+        highlights: [],
       },
     ],
     teaching: [
