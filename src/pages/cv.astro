@@ -38,14 +38,16 @@ const { research, experience, education, teaching, skills, volunteer } = site.cv
     </Section>
   )}
 
-  <Section title="Skills">
-    {skills.map((group) => (
-      <div class="skill-row">
-        <span class="skill-row__label">{group.category}: </span>
-        <span class="skill-row__items">{group.items.join(", ")}</span>
-      </div>
-    ))}
-  </Section>
+  {skills && skills.length > 0 && (
+    <Section title="Skills">
+      {skills.map((group) => (
+        <div class="skill-row">
+          <span class="skill-row__label">{group.category}: </span>
+          <span class="skill-row__items">{group.items.join(", ")}</span>
+        </div>
+      ))}
+    </Section>
+  )}
 
   {volunteer && volunteer.length > 0 && (
     <Section title="Volunteer Experience">
