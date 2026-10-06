@@ -192,7 +192,7 @@ export const site: SiteConfig = {
       },
       {
         organization: "Oberlin College",
-        role: "Linear Optimization Researcher, Professor Robert Bosch",
+        role: "Linear Optimization Research, Professor Robert Bosch",
         location: "Oberlin, OH",
         startDate: "2018",
         endDate: "2019",
