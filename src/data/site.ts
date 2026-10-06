@@ -109,10 +109,10 @@ export const site: SiteConfig = {
     tagline: "Computer Scientist",
     profileImage: "/profile.png",
     bio: [
-      "I'm a computer scientist interested in interpretable AI systems whose reasoning can be inspected, trusted, and improved by the people who use them. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
-      "At Google, I led a research agenda to dramatically improve open-source developer workflows using LLMs to automate unit-test creation. I designed hybrid embedding and code-coverage evaluations for our experiments, and created a graph-structured reasoning framework for automated test generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for the first training of Google's internal models on open-source code, led the API-correctness and code-coverage infrastructure for Android Mainline (enabling continuous releases to 800+ million devices), and developed an unsupervised root-cause analysis method to uncover latent Android Infrastructure failure patterns with unlabeled data",
-      "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis framed general game playing as a bandit-arms problem and solved it with a two-stage multiagent Monte Carlo search, and I've continued developing that work independently since.",
-      "I'm currently applying to PhD programs in computer science. My research interests are program synthesis and symbolic library learning (treating compression as learning), program-synthesized concepts for concept bottleneck models, and sample-efficient symbolic methods for intractably deep search problems.",
+      "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
+      "At Google, I led a research agenda to improve open-source developer workflows with LLMs by creating a graph-structured reasoning framework to automate test-generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
+      "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory",
+      "I'm currently applying to PhD programs in interpretable AI, with interests in program synthesis and symbolic library learning, program-synthesized concepts for concept bottleneck models, and sample-efficient symbolic methods for intractably deep search problems.",
       "As a side-passion, I make digital art with integer programming and other optimization techniques, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at madebymath.art.",
     ],
     location: "San Francisco, CA",
@@ -137,7 +137,7 @@ export const site: SiteConfig = {
 
   research: {
     intro:
-      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models—if we can't explain why a system makes a decision, we can't truly trust it. My current work spans program synthesis and symbolic library learning, concept bottleneck models, and sample-efficient reinforcement learning for general game playing.",
+      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models, and believe that if we can't explain why a system makes a decision, we can't truly trust it. My current interests span program synthesis and symbolic library learning, concept bottleneck models, and sample-efficient reinforcement learning for general game playing.",
     publications: [
       {
         title:
