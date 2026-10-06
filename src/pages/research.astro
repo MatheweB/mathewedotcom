@@ -36,7 +36,7 @@ const appliedResearch = site.cv.experience.slice(0, 1);
     ))}
   </Section>
 
-  {futureDirections.length > 0 && (
+  {futureDirections && futureDirections.length > 0 && (
     <Section title="Future Directions">
       <ul class="disc-list">
         {futureDirections.map((direction) => (
