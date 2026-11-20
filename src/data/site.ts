@@ -137,7 +137,7 @@ export const site: SiteConfig = {
 
   research: {
     intro:
-      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I favor transparent, symbolic approaches over black-box models, and believe that understanding the abstractions and reasoning behind intelligent models is. My current interests span program synthesis and symbolic library learning, concept learning, causal interpretability, and sample-efficient RL",
+      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I believe that understanding the abstractions and reasoning behind intelligent models will allow humanity to better understand and reason about the universe. My current interests span program synthesis and symbolic library learning, concept learning, causal interpretability, and sample-efficient RL",
     publications: [
       {
         title:
