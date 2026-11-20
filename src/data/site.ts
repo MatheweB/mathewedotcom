@@ -91,7 +91,7 @@ export const site: SiteConfig = {
   meta: {
     title: "Mathewe Banda",
     description:
-      "Computer scientist interested in interpretable AI: program synthesis, symbolic library learning, and reinforcement learning. Also makes art with math.",
+      "Computer scientist interested in interpretable AI: causal interpretability, symbolic library learning, and reinforcement learning. Also makes art with math.",
     siteUrl: "https://mathewe.com",
   },
 
@@ -112,7 +112,7 @@ export const site: SiteConfig = {
       "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
       "At Google, I led a research agenda to improve open-source developer workflows with LLMs by creating a graph-structured reasoning framework to automate test-generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
       "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory",
-      "I'm currently applying to PhD programs focused on interpretable AI, with research interests in program synthesis and reusable abstraction learning, concept learning and causal interpretability, and sample-efficient reinforcement learning for self-directed learning and reasoning.",
+      "I'm currently applying to PhD programs focused on interpretable AI, with research interests in program synthesis & library learning, concept learning and causal interpretability, and sample-efficient reinforcement learning.",
       "As a side-passion, I make digital art using linear optimization algorithms, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at www.madebymath.art.",
     ],
     location: "San Francisco, CA",
@@ -159,19 +159,19 @@ export const site: SiteConfig = {
     ],
     interests: [
       {
-        title: "Program Synthesis & Symbolic Regression",
+        title: "Program Synthesis & Library Learning",
         description:
-          "Discovering reusable computational abstractions through program synthesis, library learning, and symbolic regression. Investigating how starting primitives, search strategies, and minimum-description-length objectives shape what systems learn.",
+          "Discovering reusable computational abstractions. Investigating how starting primitives, compression criteria, and search strategies shape what systems learn.",
       },
       {
         title: "Concept Learning & Causal Interpretability",
         description:
-          "Investigating how learned neural concepts can be expressed as interpretable programs, and whether those abstractions faithfully reflect a model's computations. Exploring concept bottlenecks, causal interventions, and human-understandable reasoning.",
+          "Investigating how learned neural concepts can be expressed as interpretable programs, and whether those abstractions faithfully reflect a model's computations. Exploring concept bottlenecks, causal interventions, and chain-of-thought faithfulness.",
       },
       {
         title: "Reinforcement Learning & General Game Playing",
         description:
-          "Studying how agents develop reusable reasoning strategies through self-play, search, and adaptive curricula, with an emphasis on interpretable and sample-efficient learning",
+          "Studying how agents develop reusable reasoning strategies through self-play, search, and adaptive curricula, with an emphasis on interpretable and sample-efficient learning.",
       },
     ],
   },
