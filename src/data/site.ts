@@ -166,7 +166,7 @@ export const site: SiteConfig = {
       {
         title: "Concept Learning & Causal Interpretability",
         description:
-          "Investigating how learned neural concepts can be expressed as interpretable programs, and whether those abstractions faithfully reflect a model's computations. Exploring concept bottlenecks, causal interventions, and chain-of-thought faithfulness.",
+          "Investigating how interpretable programs can serve as learned concepts within neural models, and whether those abstractions faithfully reflect a model's computations. Exploring causal interventions and chain-of-thought faithfulness.",
       },
       {
         title: "Reinforcement Learning & General Game Playing",
