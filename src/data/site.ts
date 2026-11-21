@@ -110,10 +110,10 @@ export const site: SiteConfig = {
     profileImage: "/profile.png",
     bio: [
       "I'm a computer scientist with a passion for researching and developing AI systems that are interpretable, reliable, and useful. Most recently, I spent five years as a software engineer at Google, turning ideas into working systems. I started in 2019 as an Engineering Resident.",
-      "At Google, I led research in LLM reasoning for out-of-distribution tasks. I delevoped a chain-of-reasoning framework, evaluation frameworks for experimenting, and enabled automated test generation for AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs on AndroidOS, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
+      "At Google, I led research in LLM reasoning for out-of-distribution tasks by delevoping a chain-of-reasoning framework that enabled automated test generation for AndroidOS. I also collaborated with DeepMind and CoreML to train internal LLMs on AndroidOS, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
       "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory.",
       "I'm currently applying to PhD programs focused on interpretable AI, with research interests in program synthesis & library learning, concept learning and causal interpretability, and sample-efficient reinforcement learning.",
-      "As a side-passion, I make digital art using linear optimization algorithms, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at www.madebymath.art.",
+      "As a side-passion, I make digital art using linear optimization algorithms, building on independent research with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at www.madebymath.art.",
     ],
     location: "San Francisco, CA",
     socialLinks: [
@@ -149,7 +149,7 @@ export const site: SiteConfig = {
         url: "https://digitalcommons.oberlin.edu/honors/116",
         repoUrl: "https://github.com/MatheweB/WiseExplorer",
         abstract:
-          "An interpretable general game player that takes only the rules of a game as input, requires no pre-training, and whose reasoning is traceable to accumulated self-play statistics. Move selection is framed as a multi-armed bandit problem and solved with a two-stage multiagent Monte Carlo search: the first stage prunes losing branches and the second exploits promising ones with a UCB-style policy, converging to Nash equilibria. The player achieves perfect tic-tac-toe, reliably finds winning moves in Nim, and plays strategically in minichess.",
+          "An interpretable general game player that takes only the rules of a game as input, requires no pre-training, and whose reasoning is traceable to self-play equilibria. Move selection is framed as a multi-armed bandit problem and solved with a two-stage multiagent Monte Carlo search: the first stage prunes losing branches and the second exploits promising ones with a UCB-style policy, converging to Nash equilibria. The model achieves perfect tic-tac-toe, reliably finds winning moves in Nim, and plays strategically in minichess.",
         highlights: [
           "Rules-only input, no pre-training, and reasoning traceable to accumulated self-play statistics",
           "Move selection framed as a multi-armed bandit, solved by a two-stage multiagent Monte Carlo search that prunes losing branches and exploits promising ones with a UCB-style policy",
@@ -293,6 +293,7 @@ export const site: SiteConfig = {
         highlights: [
           "Mentored and taught 12+ early-career engineers across several teams through Google's Engineering Residency and Early Career Immersion programs",
           "Guided project scoping, design decisions, and code reviews to accelerate onboarding and independent contribution",
+          "Supported applicants from underrepresented groups through Google’s Champion program, providing interview practice and guidance throughout the hiring process.",
         ],
       },
       {
