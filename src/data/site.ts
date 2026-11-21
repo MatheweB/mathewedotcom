@@ -109,9 +109,9 @@ export const site: SiteConfig = {
     tagline: "Computer Scientist",
     profileImage: "/profile.png",
     bio: [
-      "I'm a computer scientist with a passion for research and developing AI systems that are transparent, reliable, and useful. Most recently, I spent five years as a software engineer at Google, learning how to turn research ideas into working systems.",
-      "At Google, I led a research agenda to improve open-source developer workflows with LLMs by creating a graph-structured reasoning framework to automate test-generation across AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
-      "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory",
+      "I'm a computer scientist with a passion for researching and developing AI systems that are interpretable, reliable, and useful. Most recently, I spent five years as a software engineer at Google, turning ideas into working systems. I started in 2019 as an Engineering Resident.",
+      "At Google, I led research in LLM reasoning for out-of-distribution tasks. I delevoped a chain-of-reasoning framework, evaluation frameworks for experimenting, and enabled automated test generation for AndroidOS. I collaborated with DeepMind and CoreML on data specifications for training internal LLMs on AndroidOS, developed an unsupervised approach to root-cause analysis for Android Infrastructure errors, and led the Android Mainline API-correctness and coverage infrastructure.",
+      "Before Google, I graduated with High Honors in Computer Science from Oberlin College, with a minor in Mathematics. My honors thesis explored multi-agent reinforcement learning and game theory.",
       "I'm currently applying to PhD programs focused on interpretable AI, with research interests in program synthesis & library learning, concept learning and causal interpretability, and sample-efficient reinforcement learning.",
       "As a side-passion, I make digital art using linear optimization algorithms, building on independent work with Professor Robert Bosch at Oberlin. You can find the images and the methodology behind them at www.madebymath.art.",
     ],
@@ -137,7 +137,7 @@ export const site: SiteConfig = {
 
   research: {
     intro:
-      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I believe that understanding the abstractions and reasoning behind intelligent models will allow humanity to better understand and reason about the universe. My current interests span program synthesis and symbolic library learning, concept learning, causal interpretability, and sample-efficient RL",
+      "My research centers on interpretable AI: designing systems whose decisions can be understood, trusted, and improved by humans. I believe that understanding the abstractions and reasoning behind intelligent models will allow humanity to better understand and reason about the universe. My current interests span program synthesis & symbolic library learning, concept learning, causal interpretability, and sample-efficient RL",
     publications: [
       {
         title:
@@ -187,7 +187,7 @@ export const site: SiteConfig = {
         type: "research",
         highlights: [
           "Earned High Departmental Honors in Computer Science for a year-long independent research project culminating in a qualifying exam, thesis defense, and public presentation",
-          "Designed a novel interpretable model for general game playing: a two-stage multiagent Monte Carlo search that converges to Nash equilibria and runs in real time without pre-training",
+          "Designed a novel interpretable model for general game playing: a two-stage multiagent Monte Carlo search that converges to Nash equilibria and runs in real time using only the rules of a game.",
         ],
       },
       {
@@ -254,7 +254,7 @@ export const site: SiteConfig = {
         type: "work",
         highlights: [
           "Optimized Android smart-sync performance, enabling developers to sync to the latest best-known AndroidOS baseline up to 99% (one day) faster",
-          "Developed a photomosaic image-generation algorithm that recreates a source image by tiling thousands of images from a database (the Met gallery database)",
+          "Developed a photomosaic image-generation algorithm that recreates a source image by tiling thousands of images from the MET gallery database",
         ],
       },
       {
